@@ -38,7 +38,7 @@ func GetVideoPage(c *gin.Context) {
 	}
 	if root.IsDir() {
 		var videoPath = ""
-		var videoName = "请选择视频进行播放"
+		var videoName = "Please select a video to play"
 		var localFiles []model.LocalFile
 		var tempFiles []model.LocalFile
 		files, err := ioutil.ReadDir(rootPath)
@@ -57,7 +57,7 @@ func GetVideoPage(c *gin.Context) {
 			}
 			parentPath := strings.Join(parts, "/")
 			parentFile := model.LocalFile{
-				Name:         "上级目录",
+				Name:         "Parent directory",
 				Link:         "video?path=" + url.QueryEscape(parentPath),
 				Size:         "",
 				IsFolder:     true,
